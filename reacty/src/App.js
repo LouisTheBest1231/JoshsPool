@@ -1,7 +1,11 @@
+import WaveForm from "./WaveForm";
 
 function App() {
   return (
-    <div>WASSSUP</div>
+    <div className="App">
+      React Component Baby!
+      <WaveForm/>
+    </div>
   );
 }
 

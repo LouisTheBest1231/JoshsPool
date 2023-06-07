@@ -1,1 +1,10 @@
-
+*
+{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.WaveForm
+{
+  width: 300px;
+  height: 220px;
+}
