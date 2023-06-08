@@ -9,12 +9,30 @@ import audio3 from './localDummySounds/mixkit-small-group-cheer-and-applause-518
 
 export default function WaveForm()
 {
-    const waveformRef = useRef();
+    const [playPauseButton, setPlayPauseButton] = useState("Play");
+    const [soundDuration, setSoundDuration] = useState(999);
+    const [soundCurrentTime, setSoundCurrentTime] = useState(0);
+    const wavesurfer = useRef();
+
+    function playPause()
+    {
+        if(wavesurfer.current.isPlaying())
+        {
+            wavesurfer.current.pause();
+          
+        }
+        else
+        {
+            wavesurfer.current.play();
+            setPlayPauseButton("Pause");
+        }
+    }
+
 
     useEffect(()=>{
        
-        const wavesurfer = WaveSurfer.create({
-            container:waveformRef.current,
+        wavesurfer.current = WaveSurfer.create({
+            container:"#WaveForm",
             waveColor: 'rgb(200, 0, 200)',
             progressColor: 'rgb(100, 0, 100)',
             barGap:1,
@@ -23,21 +41,51 @@ export default function WaveForm()
             url: audio3,
         });
         
-        wavesurfer.setVolume(0.05);
+        wavesurfer.current.setVolume(0.5);
         
-        wavesurfer.on('interaction', ()=>{
-            wavesurfer.play();
-            console.log("ayo?>")
+        wavesurfer.current.on('ready', (duration)=>{
+            let date = new Date(0);
+
+            var timeString1 = date.toISOString().substring(14,19);
+            setSoundCurrentTime(timeString1)
+
+            date.setSeconds(duration);
+            var timeString2 = date.toISOString().substring(14,19);
+            setSoundDuration(timeString2);
+
+
         });
+
+        wavesurfer.current.on('interaction', ()=>{
+            wavesurfer.current.play();
+        });
+        wavesurfer.current.on('play', ()=>{
+            setPlayPauseButton("Pause");
+        });
+        wavesurfer.current.on('pause', ()=>{
+            setPlayPauseButton("Play");
+        });
+        wavesurfer.current.on('timeupdate', (currentTime)=>{
+            let date = new Date(0);
+            date.setSeconds(currentTime);
+            var timeString = date.toISOString().substring(14,19);
+            setSoundCurrentTime(timeString);
+        });
+        
+        
         
 
         //Wow this is the cleanup callback of the useEffect hook, pretty cool, didn't know it was a thing
-        return ()=>{wavesurfer.destroy();}
+        return ()=>{wavesurfer.current.destroy();}
 
     }, []);
 
+    
+
     return (
-    <div ref={waveformRef} className='WaveForm' >
-        
+    <div>
+    <div id="WaveForm" className='WaveForm' ></div>
+    <button onClick={playPause}>{playPauseButton}</button>
+    <div>{soundCurrentTime} / {soundDuration}</div>
     </div>);
 }
