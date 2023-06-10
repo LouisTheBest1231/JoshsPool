@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
+import {FaPause, FaPlay} from 'react-icons/fa'
 
 
 //Importation manuelle des fichiers audio juste pour tester, on esseyera de mettre des sons dans le database eventuellement
@@ -10,7 +11,7 @@ import audio3 from './localDummySounds/mixkit-small-group-cheer-and-applause-518
 export default function WaveForm()
 {
     const [playPauseButton, setPlayPauseButton] = useState("Play");
-    const [soundDuration, setSoundDuration] = useState(999);
+    const [soundDuration, setSoundDuration] = useState('00:00');
     const [soundCurrentTime, setSoundCurrentTime] = useState(0);
     const wavesurfer = useRef();
 
@@ -87,5 +88,8 @@ export default function WaveForm()
     <div id="WaveForm" className='WaveForm' ></div>
     <button onClick={playPause}>{playPauseButton}</button>
     <div>{soundCurrentTime} / {soundDuration}</div>
+    
+    {playPauseButton == "Play" && <FaPlay size={70} onClick={playPause}></FaPlay>}
+    {playPauseButton == "Pause" && <FaPause size={70} onClick={playPause}></FaPause>}
     </div>);
 }
