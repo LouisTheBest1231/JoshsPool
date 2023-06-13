@@ -1,10 +1,12 @@
+import CompleteSoundEffectBox from "./SoundEffectBox/CompleteSoundEffectBox";
 import WaveForm from "./WaveForm";
 
 function App() {
   return (
     <div className="App">
-      React Component Baby!
-      <WaveForm/>
+      
+      <CompleteSoundEffectBox Title="Sound Effect 1"/>
+      
     </div>
   );
 }
