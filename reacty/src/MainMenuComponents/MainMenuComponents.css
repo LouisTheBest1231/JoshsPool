@@ -24,6 +24,8 @@
     align-items: center;
     gap:10px;
     
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .SearchBarInput{
@@ -38,6 +40,13 @@
 .SearchBarInputBox{
     border: 0;outline: 0;
     flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+}
+.SearchBarTags{
+    text-overflow: ellipsis ;
+
+   
 }
 
 .SoundLayout{
