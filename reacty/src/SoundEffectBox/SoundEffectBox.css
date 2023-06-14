@@ -1,19 +1,16 @@
 .SoundEffectBox
 {
-    background-color : #41566B;
+    background-color : #79A0C7;
     border-radius: 25px;
     padding: 20px;
-    width: 400px;
+    flex-grow: 1;
 }
 .Title
 {
     font-size: 25px;
     font-weight: bold;
 }
-.WaveSurf
-{
 
-}
 
 
 

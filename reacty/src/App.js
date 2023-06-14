@@ -1,11 +1,20 @@
-import CompleteSoundEffectBox from "./SoundEffectBox/CompleteSoundEffectBox";
-import WaveForm from "./WaveForm";
+import NavigationBar from "./MainMenuComponents/NavigationBar";
+import SearchBar from "./MainMenuComponents/SearchBar";
+import SoundLayout from "./MainMenuComponents/SoundLayout";
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+      <div className="BrowseTab"><NavigationBar name="Browse Sound Effects"/></div>
+      <div className="AboutTab"><NavigationBar name="About"/></div>
+      <div className="SearchTab"><SearchBar/></div>
+      <div className="SoundEffectContent">
+        <SoundLayout/>
+        
+      </div>
       
-      <CompleteSoundEffectBox Title="Sound Effect 1"/>
       
     </div>
   );

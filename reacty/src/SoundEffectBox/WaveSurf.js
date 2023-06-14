@@ -7,7 +7,7 @@ import WaveSurfer from 'wavesurfer.js';
 **
 ************/ 
 
-export default function WaveSurf({audioSource, setSoundCurrentTime, setSoundTotalDuration, setPlayButtonState, playPauseTrigger})
+export default function WaveSurf({audioSource, setSoundCurrentTime, setSoundTotalDuration, setPlayButtonState, playPauseTrigger, containerName})
 {
     const wavesurfer = useRef();
 
@@ -26,16 +26,16 @@ export default function WaveSurf({audioSource, setSoundCurrentTime, setSoundTota
 
     useEffect(()=>{
         wavesurfer.current = WaveSurfer.create({
-            container : "#WaveSurf",
+            container : "#" + containerName,
             waveColor: 'rgb(145, 192, 238)',
-            progressColor: 'rgb(73, 154, 235)',
+            progressColor: 'rgb(0,0,0)',
             barGap:1,
             barRadius:400,
             barWidth : 5,
             
             url:audioSource
         });
-
+       
 
         wavesurfer.current.on('ready', (duration)=>{
             let date = new Date(0);
@@ -78,7 +78,7 @@ export default function WaveSurf({audioSource, setSoundCurrentTime, setSoundTota
     }, [playPauseTrigger]);
 
     return (
-        <div id="WaveSurf" className="WaveSurf">
+        <div id={containerName} className="WaveSurf">
         </div>
     );
 }

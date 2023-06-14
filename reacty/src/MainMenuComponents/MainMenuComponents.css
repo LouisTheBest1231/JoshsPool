@@ -1,0 +1,49 @@
+.NavigationBar{
+    border-radius: 125px 125px 0px 0px;
+    background-color: #162F47;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+
+    justify-content: center;
+    color : white;
+    
+    /*fixes the problem with the navbar layout when resizing*/
+    font-size: 2vw;
+}
+
+.SearchBar{
+    background-color: #79A0C7;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    
+}
+
+.SearchBarInput{
+    background-color: white;
+    width: 60%;
+    border-radius: 40px;
+    padding:10px;
+
+    display: flex;
+    gap:5px;
+}
+.SearchBarInputBox{
+    border: 0;outline: 0;
+    flex-grow: 1;
+}
+
+.SoundLayout{
+    display:flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    gap: 10px;
+    justify-content: space-between;
+}

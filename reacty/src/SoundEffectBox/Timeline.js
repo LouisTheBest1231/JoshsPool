@@ -5,7 +5,7 @@ import {AiFillPauseCircle, AiFillPlayCircle} from 'react-icons/ai'
 ** Class of the play/pause button && the timer && the wave pattern
 **
 ************/ 
-export default function Timeline({audioSource})
+export default function Timeline({audioSource, containerName})
 {
     const [playButtonState, setPlayButtonState] = useState("Play");
     const [soundCurrentTime, setSoundCurrentTime] =useState("00:00");
@@ -27,7 +27,7 @@ export default function Timeline({audioSource})
             {playButtonState === "Pause" && <AiFillPauseCircle size={40} onClick={playPauseFunction}></AiFillPauseCircle>}
             <div className="TimeSurf">
                 <WaveSurf audioSource={audioSource} setPlayButtonState={setPlayButtonState} setSoundCurrentTime={setSoundCurrentTime} 
-                    setSoundTotalDuration={setSoundTotalDuration} playPauseTrigger={playPauseTrigger}/>
+                    setSoundTotalDuration={setSoundTotalDuration} playPauseTrigger={playPauseTrigger} containerName={containerName}/>
 
                 <div>{soundCurrentTime} / {soundTotalDuration}</div>
             </div>
