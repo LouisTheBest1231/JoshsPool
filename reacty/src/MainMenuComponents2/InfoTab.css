@@ -1,0 +1,18 @@
+.InfoTab{
+   
+    margin-top: calc(250px + 5vh);
+    margin-left: 10vw; margin-right: 10vw;
+    text-align: justify;
+   
+}
+
+img{
+    width: 100%;
+    
+    object-fit: contain;
+    
+}
+
+.InfoTab p{
+    padding-bottom: 10px;
+}

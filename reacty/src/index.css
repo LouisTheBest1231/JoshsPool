@@ -1,14 +1,16 @@
 *
 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
+  /* font-family: 'Quicksand', sans-serif;
+  font-family: 'Abadi', sans-serif; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 
 
 body
 {
   margin: 0;
-  background-color: #2C3947;
+  background-color: white;
   
   
 
@@ -16,50 +18,20 @@ body
 }
 
 .container{
-  margin-left: 20%;
-  margin-right: 20%;
-  height: 100vh;
-  display:grid;
-  
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 70px 90px 1fr;
-  gap:10px;
+  display:flex;
+  flex-flow:column nowrap;
+  gap:25px;
 }
 
-.container div{
-  /*border : 1px solid black;*/
+.FIXED{
+  display: flex;
+  flex-flow: column nowrap;
+  gap:25px;
+
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
-
-.BrowseTab{
-  grid-column-start: 1;
-  grid-column-end : 3;
-  grid-row-start : 1;
-  grid-row-end: 2;
-  /*border : 1px solid black;*/
-  
-}
-
-.AboutTab{
-  grid-column-start: 3;
-  grid-column-end : 4;
-  grid-row-start : 1;
-  grid-row-end: 2;
-  /* border : 1px solid black; */
-  
-}
-
-.SearchTab{
-  grid-column-start: 1;grid-column-end : 4;
-  grid-row-start : 2;
-  grid-row-end: 3;
-  /* border : 1px solid black; */
-
-}
-
-.SoundEffectContent{
-  grid-column-start: 1;grid-column-end : 4;
-  grid-row-start : 3;
-  grid-row-end: 4;
-  /* border : 1px solid black; */
-}

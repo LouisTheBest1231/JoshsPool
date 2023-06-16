@@ -1,0 +1,29 @@
+.SiteName{
+    display:flex;
+    align-items: flex-end;
+}
+
+.Title{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.BigTitle{
+    color:#0070C0;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.SmallTitle{
+    text-align: center;
+    font-weight: bold;
+}
+
+.BlueBuffer{
+    background-color: #4472C4;
+    height: 30px;
+    
+    flex-grow: 1;
+}
