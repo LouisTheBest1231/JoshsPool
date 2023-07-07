@@ -1,1 +1,1 @@
-web: gunicorn --chdir SoundEffectApp app:app
+web: gunicorn --chdir SoundEffectApp app:__init__
