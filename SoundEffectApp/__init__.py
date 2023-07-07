@@ -10,7 +10,7 @@ def create_app(test_config=None):
     
     app.config.from_mapping(
         SECRET_KEY=secrets.token_urlsafe(32),
-        SQLALCHEMY_DATABASE_URI="postgresql://cvsvfhwtmxjjyq:aff235eb724eb20cbb8ff41e79d2bf8ffffe1ecb6c0fc80b1a88bd8731800515@ec2-54-208-11-146.compute-1.amazonaws.com/d9jg2e93n52rg8",
+        SQLALCHEMY_DATABASE_URI="postgresql://ijxlyikrhgssou:f8346f85c40991d6d00dd33b3870a7faa6c61149e5686463134705d8330a56e7@ec2-44-206-204-65.compute-1.amazonaws.com:5432/d7s6nrer3ue3op",
         SQLAlchemy_TRACK_MODIFICATIONS=False
     )
     
@@ -18,6 +18,9 @@ def create_app(test_config=None):
         app.config.from_pyfile('config.py', silent=True)
     else:
         app.config.from_mapping(test_config)
-        
-    db.init_app(app)
+    
+    db.init_app(app)    
+    from .views.sound_effect_view import bp as sound_effect_bp
+    app.register_blueprint(sound_effect_bp)
+    
     return app
