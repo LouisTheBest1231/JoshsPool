@@ -1,1 +1,1 @@
-web: gunicorn --chdir SoundEffectApp __init__:app
+web: gunicorn wsgi:app
