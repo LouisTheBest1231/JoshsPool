@@ -3,7 +3,7 @@ import secrets
 from flask import Flask, render_template, get_flashed_messages, flash
 from flask_login import LoginManager, current_user
 from flask_sqlalchemy import SQLAlchemy
-from SoundEffectApp.db import db
+from .db import db
 
 def create_app(test_config=None):
     app = Flask(__name__)
